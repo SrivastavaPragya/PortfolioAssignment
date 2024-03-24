@@ -74,7 +74,7 @@ const Services = ({ servicesData }) => {
                 </div>
                 <div className="card__content">
                   <h3>{service.name}</h3>
-                  <p>{service.desc}</p>
+                  <p style={{fontSize:"1.3rem"}}>{service.desc}</p>
                 </div>
               </div>
             </div>

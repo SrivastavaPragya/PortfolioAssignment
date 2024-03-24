@@ -248,15 +248,72 @@ img {
   border-radius: 5px;
 }
 
+@media (max-width: 900px) {
+  .about-me-flex-container {
+    /* Adjust the flex-direction or padding if necessary */
+  }
+
+  .about-me .about-me-container {
+    padding: 1rem 2rem; /* Slightly reduce padding */
+  }
+
+  .about-me-flex-container .about-me-content .text,
+  .about-me-flex-container .about-me-container .about-me-title {
+    font-size: 18px; /* Adjust font size for readability */
+  }
+}
+
+@media (max-width: 900px) {
+  .about-me-flex-container {
+    /* Adjust the flex-direction or padding if necessary */
+  }
+
+  .about-me .about-me-container {
+    padding: 1rem 2rem; /* Slightly reduce padding */
+  }
+
+  .about-me-flex-container .about-me-content .text,
+  .about-me-flex-container .about-me-container .about-me-title {
+    font-size: 18px; /* Adjust font size for readability */
+  }
+}
 
 
+@media (max-width: 500px) {
+  .about-me-flex-container,
+  .container {
+    padding: 0px 15px; /* Further reduce padding for smaller screens */
+  }
 
+  .about-me .about-me-container .about-me-title {
+    font-size: 20px; /* Further reduce title size for smaller screens */
+  }
+
+  .about-me-flex-container .about-me-image {
+    width: 200px;
+    height: 200px; /* Further adjust image size */
+  }
+
+  .about-me-flex-container .about-me-content .text {
+    font-size: 15px; /* Adjust text size for better readability */
+  }
+
+  .about-me-flex-container .about-me-content .logo img {
+    transform: rotateZ(0deg); /* Adjust logo orientation if necessary */
+  }
+
+  .mail-button, .mail-button2 {
+    width: 60px; /* Adjust button sizes */
+    height: 60px;
+    padding: 10px; /* Adjust padding */
+  }
+
+  .mail-button2 img {
+    transform: scale(1.2); /* Adjust scale effect */
+  }
+}
 
 /* services css */
-
-
-
-
 :root {
   /*========== Colors ==========*/
    background-color: #002733;
@@ -429,14 +486,67 @@ body {
   background-color: var(--clr);
 }
 
+/*==================== RESPONSIVENESS ====================*/
+/* For devices up to 900px */
+@media (max-width: 900px) {
+  .card__container {
+    padding: 40px 20px; /* Adjust container padding */
+    gap: 40px; /* Reduce gap between cards */
+  }
+  .card__bx {
+    height: 300px; /* Adjust card height */
+    width: 250px; /* Adjust card width for smaller screens */
+  }
+  .card__bx .card__data h3,
+  .card__bx .card__data p {
+    font-size: 1.3rem; /* Adjust font size for readability */
+  }
+}
+
+/* For devices up to 700px */
+@media (max-width: 700px) {
+  .card__container {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 30px;
+  }
+  .card__bx {
+    width: auto; /* Allow cards to fill container width */
+    margin: 0 10px; /* Add some margin to the sides */
+  }
+  .card__bx .card__data h3 {
+    font-size: 1.2rem;
+  }
+  .card__bx .card__data p {
+    font-size: 0.8rem; /* Adjust paragraph font size */
+  }
+}
+
+/* For devices up to 500px */
+@media (max-width: 500px) {
+  .card__container {
+    padding: 20px 10px; /* Reduce padding further */
+    gap: 20px; /* Smaller gap */
+  }
+  .card__bx {
+    padding: 15px; /* Adjust card padding */
+    height: 280px; /* Adjust card height */
+  }
+  .card__bx .card__data {
+    gap: 20px; /* Reduce gap between card elements */
+  }
+  .card__bx .card__data .card__icon {
+    font-size: 2.5rem; /* Reduce icon size */
+  }
+  .card__bx .card__data h3 {
+    font-size: 1rem; /* Reduce heading font size */
+  }
+  .card__bx .card__data p {
+    font-size: 0.75rem; /* Reduce paragraph font size */
+  }
+}
 
 
 /* skills section */
-
-
-
-
-
 .skills-section {
 
 
@@ -553,6 +663,7 @@ padding: 2rem;
   color: #333;
   margin-top: 0.5rem;
 }
+
 @media screen and (max-width: 990px) {
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
@@ -567,6 +678,52 @@ padding: 2rem;
   }
 }
 
+
+
+@media screen and (max-width: 900px) {
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr); /* Show 3 items per row */
+    padding: 2rem; /* Adjust padding */
+  }
+}
+
+/* Adjustments at 700px Breakpoint */
+@media screen and (max-width: 700px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 items per row */
+    padding: 2rem 30px; /* Adjust padding */
+  }
+}
+
+/* Adjustments already in place for up to 650px */
+@media screen and (max-width: 650px) {
+  .skills-container {
+    grid-template-columns: 1fr; /* Stack items in a single column */
+    padding: 2rem 20px; /* Adjust padding */
+  }
+}
+
+/* Additional Adjustments at 500px Breakpoint */
+@media screen and (max-width: 500px) {
+  .skills-container {
+ 
+    padding: 2rem 10px; 
+  }
+
+  .skills-box {
+    /* Adjust the skill box if necessary, for example: */
+    padding: 0.5rem; /* Reduce padding */
+  }
+
+  .skills-title h3 {
+    font-size: 0.9rem; /* Adjust font size for small devices */
+  }
+
+  .skills-img {
+    width: 70px; /* Adjust image size */
+    height: 70px;
+  }
+}
 
 
 
@@ -861,9 +1018,67 @@ padding: 2rem;
 }
 
 
+/* Responsive Adjustments for 900px */
+@media (max-width: 900px) {
+  .page-content {
+    grid-template-columns: repeat(3, 1fr); /* Adjust columns to 3 for wider screens */
+    padding: 1rem; /* Optionally adjust padding */
+  }
+
+  .d_card {
+    padding: 0.8rem; /* Adjust card padding */
+  }
+
+  /* Adjust font sizes, image sizes, or other elements as needed */
+}
+
+/* Responsive Adjustments for 700px */
+@media (max-width: 700px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr); /* Adjust columns to 2 for medium screens */
+    padding: 0.8rem; /* Optionally adjust padding */
+  }
+
+  .d_card {
+    /* Adjust the .d_card styles if necessary */
+    height: auto; /* Optionally make the height auto to fit content */
+  }
+
+  /* Further adjustments to text sizes, margins, or padding can be added here */
+}
+
+/* Responsive Adjustments for 500px */
+@media (max-width: 500px) {
+  .page-content {
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+    padding: 0.5rem; /* Reduce padding */
+  }
+
+  .d_card {
+    /* Adjust the .d_card styles for smaller screens */
+    padding: 0.5rem; /* Reduce padding */
+  }
+
+  .d_card .content, .d_card .heading, .d_card:before, .d_card:after {
+    /* Adjust content, heading, pseudo-elements for smaller screens */
+    /* Example: */
+    font-size: 0.9rem; /* Reduce font size */
+    transform: translateY(0); /* Adjust or remove transformations */
+  }
+
+  /* Any other necessary adjustments for small screens can be added here */
+}
+
+/* Ensure transitions and transforms are smooth across breakpoints */
+@media (hover: hover) and (pointer: fine) {
+  /* Hover effects remain as originally defined */
+}
+
+
+
+
+
 /* Testimonial */
-
-
 *, *::before, *::after{
   box-sizing: border-box;
   margin:0;
@@ -961,7 +1176,57 @@ padding: 2rem;
 }
 
 
+@media (max-width: 900px) {
+  .testimonial-container {
+    padding: 40px 60px; /* Slightly reduce padding */
+  }
+  .testimonial, .user .user-details {
+    font-size: 0.95rem; /* Adjust font size for readability */
+  }
+}
 
+@media (max-width: 700px) {
+  .testimonial-container {
+    padding: 30px 40px; /* Further reduce padding */
+  }
+  .user .user-image {
+    height: 65px; /* Adjust user image size */
+    width: 65px;
+  }
+  .testimonial, .user .user-details {
+    font-size: 0.9rem; /* Further adjust font size */
+  }
+}
+
+@media (max-width: 500px) {
+  .testimonial-container {
+    padding: 20px 25px; /* Reduce padding for smaller screens */
+  }
+  .fa-quote-right, .fa-quote-left {
+    display: none; /* Hide quote icons to save space */
+  }
+  .user {
+    flex-direction: column; /* Stack user details vertically */
+    align-items: center;
+  }
+  .user .user-details {
+    margin-left: 0;
+    margin-top: 10px; /* Adjust margin for stacked layout */
+  }
+  .user .user-image {
+    height: 55px; /* Further adjust user image size */
+    width: 55px;
+  }
+  .testimonial, .user .user-details {
+    font-size: 0.85rem; /* Adjust font size for very small screens */
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+}
 
 
 /* work */
@@ -1476,6 +1741,68 @@ footer p strong {
           font-size: 14px;
     }
 }
+/* Responsive Adjustments at 900px */
+@media (max-width: 900px) {
+  .row, .authorWindow {
+    padding: 0 15px; /* Adjust padding */
+  }
+
+  .cbp_tmtimeline > li .cbp_tmtime, .cbp_tmtimeline > li .cbp_tmlabel {
+    /* Adjust layout for time labels and icons for better spacing */
+    margin-left: 60px;
+  }
+}
+
+/* Responsive Adjustments at 700px */
+@media (max-width: 700px) {
+  .sectionClass {
+    padding: 60px 0; /* Adjust section padding */
+  }
+
+  .cbp_tmtimeline > li .cbp_tmtime, .cbp_tmtimeline > li .cbp_tmlabel {
+    /* Adjustments to ensure timeline elements are properly aligned and spaced */
+    margin-left: 50px;
+  }
+
+  .cbp_tmicon {
+    /* Adjust icon sizes and positioning */
+    width: 30px;
+    height: 30px;
+    line-height: 30px; /* Ensure the icon aligns nicely */
+  }
+}
+
+/* Responsive Adjustments at 500px */
+@media (max-width: 500px) {
+  .sectionClass, .row, .testimonial-container {
+    padding: 40px 0; /* Reduce padding for smaller screens */
+  }
+
+  .cbp_tmtimeline > li .cbp_tmtime, .cbp_tmtimeline > li .cbp_tmlabel {
+    margin-left: 40px; /* Tighten the layout for smaller devices */
+  }
+
+  .cbp_tmicon {
+    /* Further reduce icon size for small screens */
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+
+  .sectiontitle h2, .cbp_tmtimeline > li .cbp_tmlabel h3, footer p {
+    font-size: 0.85rem; /* Adjust font size for readability */
+  }
+
+  .authorWindow {
+    width: 100%; /* Full width on very small screens */
+    padding: 20px; /* Adjust padding */
+  }
+
+  .authorWindowWrapper {
+    display: block; /* Adjust according to your layout needs */
+    position: relative; /* Adjust positioning */
+  }
+}
 
 
 /* contatct */
@@ -1585,15 +1912,72 @@ button.contact_form_submit {
 }
 
 
+/* Existing styles are retained and not shown for brevity */
 
+/* Responsive Adjustments at 900px */
+@media (max-width: 900px) {
+  .contact_field {
+      padding: 60px 40px 90px 40px; /* Adjust padding for medium devices */
+  }
+
+  .contact_info_sec {
+      width: 280px; /* Adjust width of the contact info section */
+      height: auto; /* Adjust height to auto for flexible content accommodation */
+      padding: 20px; /* Adjust padding */
+  }
+}
+
+/* Responsive Adjustments at 700px */
+@media (max-width: 700px) {
+  .contact_field {
+      padding: 40px 20px 60px 20px; /* Adjust padding for small devices */
+  }
+
+  .contact_info_sec {
+      position: static; /* Make the contact info section flow within the document */
+      width: auto; /* Set width to auto for full-width */
+      margin-top: 20px; /* Add some space above the contact info section */
+      padding: 20px; /* Adjust padding */
+      border-radius: 15px; /* Adjust border-radius for a softer look */
+  }
+
+  .contact_field h3 {
+      font-size: 30px; /* Adjust the font size of the heading */
+  }
+}
+
+/* Responsive Adjustments at 500px */
+@media (max-width: 500px) {
+  .contact_field {
+      padding: 20px 15px; /* Further reduce padding for very small screens */
+  }
+
+  .contact_field .form-control::placeholder {
+      font-size: 12px; /* Adjust placeholder font size for better readability */
+  }
+
+  .contact_field h3 {
+      font-size: 24px; /* Further adjust the font size of the heading */
+  }
+
+  .contact_field p, .info_single span {
+      font-size: 12px; /* Adjust font size for text */
+  }
+
+  button.contact_form_submit {
+      font-size: 12px; 
+      padding: 8px 10px; 
+      width: 100%; 
+  }
+
+  .socil_item_inner li a {
+      font-size: 12px;
+      margin: 0 10px; 
+  }
+}
 
 
 /* home css */
-
-
-
-
-
 ::-webkit-scrollbar {
    display: none;
 }
@@ -1681,4 +2065,71 @@ header{
   margin-top: 3rem;
 }
 
+/* For devices up to 900px */
+@media (max-width: 900px) {
+  nav li {
+    font-size: 2.5vh; /* Adjust font size for better readability */
+  }
+  
+  #info {
+    width: 400px; /* Adjust info section width */
+    transform: translateX(-50%); /* Center the info box */
+    left: 50%; /* Center alignment */
+  }
+  
+  #info img {
+    width: 130px; /* Adjust image size */
+    height: 90%; /* Maintain aspect ratio */
+  }
+  
+  #info span {
+    font-size: 35px; /* Adjust font size */
+    padding: 20px; /* Adjust padding */
+  }
+}
+
+/* For devices up to 700px */
+@media (max-width: 700px) {
+  nav li {
+    font-size: 2vh; /* Further adjust font size */
+    padding: .3em .8em; /* Adjust padding */
+  }
+  
+  #info {
+    width: 350px; /* Further adjust info section width */
+  }
+  
+  #info img {
+    width: 120px; /* Further adjust image size */
+  }
+  
+  #info span {
+    font-size: 30px; /* Further adjust font size */
+    margin-top: 2.5rem; /* Adjust margin-top */
+  }
+}
+
+/* For devices up to 500px */
+@media (max-width: 500px) {
+  nav li {
+    font-size: 1.5vh; /* Adjust font size for smaller screens */
+    padding: .2em .6em; /* Adjust padding */
+  }
+  
+  #info {
+    width: 300px; /* Adjust info section width for small screens */
+    top: 100px; /* Adjust top position */
+  }
+  
+  #info img {
+    width: 100px; /* Adjust image size for small screens */
+    border-radius: 50px; /* Adjust border-radius */
+  }
+  
+  #info span {
+    font-size: 25px; /* Adjust font size for small screens */
+    padding: 15px; /* Adjust padding */
+    margin-top: 2rem; /* Adjust margin-top */
+  }
+}
 /* Home.css */

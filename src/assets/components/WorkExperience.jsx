@@ -40,7 +40,7 @@ const WorkExperience = ({workData}) => {
                   <i className="fa fa-calendar"></i> {experience.startDate}
                 </div>
                 <h4><i className="fa fa-flag"></i> {experience.company_name}</h4>
-                <p className="projectParagraph">{experience.bulletPoints}</p>
+                <p className="projectParagraph" style={{fontSize:"1.2rem"}}>{experience.bulletPoints}</p>
               </div>
             </li>
           ))}
