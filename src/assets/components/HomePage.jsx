@@ -36,6 +36,7 @@ const HomePage = () => {
             ctx.moveTo(this.pos.x, this.pos.y);
             ctx.lineTo(b.x, b.y);
             ctx.stroke();
+            ctx.strokeStyle = 'gray'; 
             ctx.closePath();
           }
         });

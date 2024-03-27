@@ -316,11 +316,19 @@ img {
 /* services css */
 :root {
   /*========== Colors ==========*/
-   background-color: #002733;
- 
-  /*========== Font and typography ==========*/
+  --background-color: #002733;
+  --dark-color: #34495e;
+  --dark-alt-color: #7f8c8d;
+  --white-color: #ecf0f1;
+  --button-color: #3498db;
+  --button-hover-color: #2980b9;
+  --transition: all 0.4s ease;
+
+  /*========== Font and Typography ==========*/
   --body-font: "Poppins", sans-serif;
   --normal-font-size: 0.938rem;
+  --heading-font-size: 1.5rem;
+  --text-color: #ecf0f1;
 }
 
 @media screen and (min-width: 968px) {
@@ -340,35 +348,28 @@ img {
 
 body {
   font-size: var(--normal-font-size);
-  background-color: var(--bg-color);
+  background-color: var(--background-color);
   color: var(--text-color);
   font-weight: 400;
   font-family: var(--body-font);
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 /*==================== REUSABLE CSS CLASSES ====================*/
-
+/* Reusable utility classes for margins, padding, and layout adjustments */
 
 /*==================== SERVICE CARD ====================*/
 .card__container {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 2rem;
   justify-content: center;
-  width: 100%;
   max-width: 90%;
-  margin: auto;
-  padding: 60px 0;
+  margin: 0 auto;
+  padding: 4rem 0;
 }
-.card__bx {
-  --dark-color: #2e2e2e;
-  --dark-alt-color: #777777;
-  --white-color: #ffffff;
-  --button-color: #333333;
-  --transition: 0.5s ease-in-out;
 
-  font-family: inherit;
+.card__bx {
   height: 350px;
   width: 300px;
   position: relative;
@@ -377,171 +378,98 @@ body {
   align-items: center;
   background: var(--dark-color);
   transition: var(--transition);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.card__bx::before,
-.card__bx::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  transition: var(--transition);
+
+.card__bx:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-.card__bx::before {
-  inset: -10px 50px;
-  border-top: 4px solid var(--clr);
-  transform: skewY(15deg);
-  border-bottom: 4px solid var(--clr);
-}
-.card__bx:hover::before {
-  inset: -10px 40px;
-  transform: skewY(0deg);
-}
-.card__bx::after {
-  inset: 60px -10px;
-  border-left: 4px solid var(--clr);
-  transform: skew(15deg);
-  border-right: 4px solid var(--clr);
-}
-.card__bx:hover::after {
-  inset: 40px -10px;
-  transform: skew(0deg);
-}
-.card__bx .card__data {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 30px;
+
+.card__data {
   text-align: center;
   padding: 0 20px;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
 }
-.card__bx .card__data .card__icon {
-  height: 80px;
-  width: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  color: var(--text-color);
-  background-color: var(--dark-color);
-  transition: var(--transition);
-}
-.card__bx .card__data .card__icon {
-  color: var(--clr);
-  box-shadow: 0 0 0 4px var(--dark-color), 0 0 0 6px var(--clr);
-}
-.card__bx:hover .card__data .card__icon {
-  color: var(--dark-color);
-  background-color: var(--clr);
-  box-shadow: 0 0 0 4px var(--dark-color), 0 0 0 300px var(--clr);
-}
-.card__bx .card__data .card__content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-.card__bx .card__data h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
+
+.card__data h3 {
+  font-size: var(--heading-font-size);
   color: var(--white-color);
-  transition: var(--transition);
+  margin-bottom: 1rem;
 }
-.card__bx:hover .card__data h3 {
-  color: var(--dark-color);
-  transition: var(--transition);
-}
-.card__bx .card__data p {
+
+.card__data p {
   font-size: 0.9rem;
   color: var(--dark-alt-color);
-  transition: var(--transition);
+  margin-bottom: 1.5rem;
 }
-.card__bx:hover .card__data p {
-  color: var(--dark-color);
-  transition: var(--transition);
+
+.card__data a {
+  display: inline-block;
+  background-color: var(--button-color);
+  color: var(--white-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.card__bx .card__data a {
-  position: relative;
-  display: inline-flex;
-  padding: 8px 15px;
-  text-decoration: none;
-  font-weight: 500;
-  margin-top: 10px;
-  border: 2px solid var(--clr);
-  color: var(--dark-color);
-  background-color: var(--clr);
-  transition: var(--transition);
-}
-.card__bx:hover .card__data a {
-  color: var(--clr);
-  background-color: var(--dark-color);
-}
-.card__bx:hover .card__data a:hover {
-  border-color: var(--dark-color);
-  color: var(--dark-color);
-  background-color: var(--clr);
+
+.card__data a:hover {
+  background-color: var(--button-hover-color);
 }
 
 /*==================== RESPONSIVENESS ====================*/
-/* For devices up to 900px */
 @media (max-width: 900px) {
+  :root {
+    --normal-font-size: 0.9rem;
+  }
+
   .card__container {
-    padding: 40px 20px; /* Adjust container padding */
-    gap: 40px; /* Reduce gap between cards */
+    gap: 1.5rem;
   }
+
   .card__bx {
-    height: 300px; /* Adjust card height */
-    width: 250px; /* Adjust card width for smaller screens */
-  }
-  .card__bx .card__data h3,
-  .card__bx .card__data p {
-    font-size: 1.3rem; /* Adjust font size for readability */
+    height: 300px;
+    width: 250px;
   }
 }
 
-/* For devices up to 700px */
 @media (max-width: 700px) {
+  :root {
+    --normal-font-size: 0.85rem;
+  }
+
   .card__container {
-    flex-direction: column; /* Stack cards vertically */
-    gap: 30px;
+    flex-direction: column;
+    gap: 1rem;
   }
+
   .card__bx {
-    width: auto; /* Allow cards to fill container width */
-    margin: 0 10px; /* Add some margin to the sides */
-  }
-  .card__bx .card__data h3 {
-    font-size: 1.2rem;
-  }
-  .card__bx .card__data p {
-    font-size: 0.8rem; /* Adjust paragraph font size */
+    width: 80%;
+    margin: 0 auto; /* Centers the card in the column */
   }
 }
 
-/* For devices up to 500px */
 @media (max-width: 500px) {
+  :root {
+    --normal-font-size: 0.8rem;
+  }
+
   .card__container {
-    padding: 20px 10px; /* Reduce padding further */
-    gap: 20px; /* Smaller gap */
+    padding: 2rem 1rem;
+    gap: 1rem;
   }
+
   .card__bx {
-    padding: 15px; /* Adjust card padding */
-    height: 280px; /* Adjust card height */
+    padding: 1rem;
+    height: auto; /* Adjusts the height automatically based on content */
   }
-  .card__bx .card__data {
-    gap: 20px; /* Reduce gap between card elements */
-  }
-  .card__bx .card__data .card__icon {
-    font-size: 2.5rem; /* Reduce icon size */
-  }
-  .card__bx .card__data h3 {
-    font-size: 1rem; /* Reduce heading font size */
-  }
-  .card__bx .card__data p {
-    font-size: 0.75rem; /* Reduce paragraph font size */
+
+  .card__data h3,
+  .card__data p {
+    font-size: smaller; /* Adjusts font size for smaller screens */
   }
 }
 
@@ -1965,14 +1893,14 @@ button.contact_form_submit {
   }
 
   button.contact_form_submit {
-      font-size: 12px; 
-      padding: 8px 10px; 
+      font-size: 12px; /* Adjust button font size */
+      padding: 8px 10px; /* Adjust button padding */
       width: 100%; 
   }
 
   .socil_item_inner li a {
-      font-size: 12px;
-      margin: 0 10px; 
+      font-size: 12px; /* Adjust social icons font size */
+      margin: 0 10px; /* Adjust spacing around social icons */
   }
 }
 
